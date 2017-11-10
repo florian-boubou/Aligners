@@ -1,3 +1,5 @@
+package aligner;
+
 public interface TextAligner {
 	/**
 	 * Aligns the given string according to certain rules.

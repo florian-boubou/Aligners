@@ -1,3 +1,5 @@
+package aligner;
+
 public class LeftTextAligner implements TextAligner {
 
 	@Override
