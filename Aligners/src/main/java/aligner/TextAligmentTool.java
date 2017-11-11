@@ -24,7 +24,7 @@ public class TextAligmentTool extends AbstractTextAligner {
 	}
 
 	public void setNewAligner() {
-		if(this.aligner.getAlignment() != this.alignment) {
+		if(this.aligner == null || this.aligner.getAlignment() != this.alignment) {
 			switch(this.alignment) {
 				case LEFT: 
 					this.aligner = new LeftTextAligner();
@@ -35,13 +35,16 @@ public class TextAligmentTool extends AbstractTextAligner {
 				case CENTER:
 					this.aligner = new CenterTextAligner();
 					break;
+				case RANDOM:
+					this.aligner = new RandomTextAligner();
+					break;
 				default:
 					this.aligner = new DefaultTextAligner();
 			}
 		}
 	}
 	public String align(String str) {
-		return null;
+		return aligner.align(str);
 	}
 
 	public String align(String str, Alignment alignment) {

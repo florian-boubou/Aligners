@@ -2,11 +2,7 @@ package aligner.aligners;
 
 import aligner.utils.*;
 
-public class RightTextAligner extends AbstractTextAligner {
-	private static final int DEFAULT_LINE_WIDTH = 150;
-	
-	private int lineWidth;
-
+public class RightTextAligner extends WidthBasedTextAligner {
 	public RightTextAligner() {
 		this(RightTextAligner.DEFAULT_LINE_WIDTH);
 	}
@@ -15,11 +11,8 @@ public class RightTextAligner extends AbstractTextAligner {
 		this.alignment = Alignment.RIGHT;
 		setLineWidth(lW);
 	}
-	
-	public void setLineWidth(int lW) {
-		this.lineWidth = lW;
-	}
 
+	@Override
 	public String align(String str) {
 		String[] lines = str.split("\n");
 		StringBuilder sb = new StringBuilder();
@@ -27,6 +20,8 @@ public class RightTextAligner extends AbstractTextAligner {
 		checkLineWidth(lines);
 
 		for(String line : lines) {
+			line = line.trim();
+			
 			if(line.length() < this.lineWidth) {
 				int nbSpaces = this.lineWidth - line.length();
 				line = String.format("%" + nbSpaces + "s", "") + line;
@@ -36,12 +31,5 @@ public class RightTextAligner extends AbstractTextAligner {
 		}
 		
 		return sb.toString();
-	}
-
-	private void checkLineWidth(String[] arr) {
-		int max = AlignerUtils.getMaxLineWidth(arr);
-
-		if(max > this.lineWidth)
-			setLineWidth(max);
 	}
 }

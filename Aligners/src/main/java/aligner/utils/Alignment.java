@@ -4,5 +4,6 @@ public enum Alignment {
 	LEFT,
 	RIGHT,
 	CENTER,
+	RANDOM,
 	DEFAULT;
 }

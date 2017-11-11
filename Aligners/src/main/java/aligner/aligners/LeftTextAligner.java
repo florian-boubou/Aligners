@@ -15,7 +15,7 @@ public class LeftTextAligner extends AbstractTextAligner {
 
 		//for each line, erases spaces at its beginning
 		for(String line : lines)
-			sb.append(line.replaceAll("^{ }+", ""));
+			sb.append(line.replaceAll("^[ ]+", "") + "\n");
 		
 		return sb.toString();
 	}
