@@ -1,4 +1,6 @@
-package aligner;
+package aligner.aligners;
+
+import aligner.utils.*;
 
 public class CenterTextAligner extends AbstractTextAligner {
 	private static final int DEFAULT_LINE_WIDTH = 150;
@@ -41,8 +43,6 @@ public class CenterTextAligner extends AbstractTextAligner {
 		int max = AlignerUtils.getMaxLineWidth(arr);
 
 		if(max > this.lineWidth)
-			setLineWidth(max);
-
-		
+			setLineWidth(max);		
 	}
 }

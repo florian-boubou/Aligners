@@ -1,4 +1,6 @@
-package aligner;
+package aligner.aligners;
+
+import aligner.utils.Alignment;
 
 public class LeftTextAligner extends AbstractTextAligner {
 

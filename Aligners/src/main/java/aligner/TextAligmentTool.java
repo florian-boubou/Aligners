@@ -1,5 +1,9 @@
 package aligner;
 
+import aligner.aligners.*;
+
+import aligner.utils.Alignment;;
+
 public class TextAligmentTool extends AbstractTextAligner {
 	private TextAligner aligner;
 	private Alignment   alignment;

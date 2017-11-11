@@ -1,4 +1,6 @@
-package aligner;
+package aligner.aligners;
+
+import aligner.utils.Alignment;
 
 public abstract class AbstractTextAligner implements TextAligner {
 	protected Alignment alignment;

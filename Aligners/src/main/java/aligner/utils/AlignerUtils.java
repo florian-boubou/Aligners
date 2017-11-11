@@ -1,4 +1,4 @@
-package aligner;
+package aligner.utils;
 
 public class AlignerUtils {
 	public static int getMaxLineWidth(String[] arr) {

@@ -1,4 +1,6 @@
-package aligner;
+package aligner.aligners;
+
+import aligner.utils.*;
 
 public class RightTextAligner extends AbstractTextAligner {
 	private static final int DEFAULT_LINE_WIDTH = 150;

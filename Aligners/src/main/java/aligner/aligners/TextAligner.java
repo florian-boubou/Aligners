@@ -1,4 +1,6 @@
-package aligner;
+package aligner.aligners;
+
+import aligner.utils.Alignment;
 
 public interface TextAligner {
 	/**
@@ -10,7 +12,7 @@ public interface TextAligner {
 
 	/**
 	 * Returns the class alignment type.
-	 * @return this alignment type of a TextAligner.
+	 * @return the alignment type of a TextAligner.
 	 */
 	public Alignment getAlignment();
 }
