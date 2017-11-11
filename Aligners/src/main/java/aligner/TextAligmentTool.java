@@ -1,6 +1,6 @@
 package aligner;
 
-public class TextAligmentTool implements TextAligner {
+public class TextAligmentTool extends AbstractTextAligner {
 	private TextAligner aligner;
 	private Alignment   alignment;
 
@@ -10,17 +10,41 @@ public class TextAligmentTool implements TextAligner {
 	}
 
 	public TextAligmentTool(Alignment alignment) {
-		this.alignment = alignment;
+		setAlignment(alignment);
 	}
 
+	public void setAlignment(Alignment alignment) {
+		this.alignment = alignment;
+		
+		setNewAligner();
+	}
+
+	public void setNewAligner() {
+		if(this.aligner.getAlignment() != this.alignment) {
+			switch(this.alignment) {
+				case LEFT: 
+					this.aligner = new LeftTextAligner();
+					break;
+				case RIGHT:
+					this.aligner = new RightTextAligner();
+					break;
+				case CENTER:
+					this.aligner = new CenterTextAligner();
+					break;
+				default:
+					this.aligner = new DefaultTextAligner();
+			}
+		}
+	}
 	public String align(String str) {
+		return null;
+	}
+
+	public String align(String str, Alignment alignment) {
 		return aligner.align(str);
 	}
 
-	enum Alignment {
-		LEFT,
-		RIGHT,
-		CENTER,
-		DEFAULT;
+	public Alignment getAlignment() {
+		return null;
 	}
 }

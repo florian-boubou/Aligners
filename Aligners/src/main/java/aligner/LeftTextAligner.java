@@ -1,6 +1,10 @@
 package aligner;
 
-public class LeftTextAligner implements TextAligner {
+public class LeftTextAligner extends AbstractTextAligner {
+
+	public LeftTextAligner() {
+		this.alignment = Alignment.LEFT;
+	}
 
 	@Override
 	public String align(String str) {

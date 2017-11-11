@@ -7,4 +7,10 @@ public interface TextAligner {
 	 * @return the aligned string.
 	*/
 	public String align(String str);
+
+	/**
+	 * Returns the class alignment type.
+	 * @return this alignment type of a TextAligner.
+	 */
+	public Alignment getAlignment();
 }
